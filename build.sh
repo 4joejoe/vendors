@@ -7,4 +7,4 @@ python manage.py makemigrations
 python manage.py migrate
 
 # comment out if using on remote server
-python3 manage.py runserver
+# python3 manage.py runserver
