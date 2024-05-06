@@ -27,6 +27,12 @@ python3 manage.py migrate
 python3 manage.py runserver
 ```
 
+or
+
+```bash
+# for linux
+./setup.sh
+```
 
 ## Project Structure
 
