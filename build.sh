@@ -8,4 +8,4 @@ python manage.py migrate
 
 # comment out if using on remote server
 # python3 manage.py runserver
-gunicorn --bind 0.0.0.0:8000 backend.wsgi:application
+gunicorn backend.wsgi:application
