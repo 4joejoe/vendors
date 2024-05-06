@@ -25,3 +25,4 @@ __pycache__/
 # Dependency directories
 venv/
 env/
+env*
