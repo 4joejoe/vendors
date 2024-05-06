@@ -58,13 +58,22 @@ class Performance:
 
         Vendor = apps.get_model("recipe", "Vendor")
         vendor = Vendor.objects.get(id=instance.vendor_reference.id)
-        response_time = (
-            instance.acknowledgement_date - instance.issue_date
-        ).total_seconds() / 86400
+        # Get all acknowledged POs for this vendor
+
+        acknowledged_pos = PurchaseOrder.objects.filter(
+            vendor_reference=vendor, acknowledgement_date__isnull=False
+        )
+
+        # Calculate response time for each PO and find the average
+        total_response_time = 0
+        for po in acknowledged_pos:
+            response_time = (
+                po.acknowledgement_date - po.issue_date
+            ).total_seconds() / 86400
+            total_response_time += response_time
+
         vendor.average_response_time = (
-            (vendor.average_response_time + response_time) / 2
-            if vendor.average_response_time is not None
-            else response_time
+            total_response_time / len(acknowledged_pos) if acknowledged_pos else None
         )
         vendor.save()
 
