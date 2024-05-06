@@ -1,4 +1,4 @@
-pip install -r requirements.txt
+pip install -r req.txt
 
 python manage.py makemigrations
 python maange.py migrate
