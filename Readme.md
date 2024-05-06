@@ -30,14 +30,38 @@ python3 manage.py runserver
 
 ## Project Structure
 
-- project model have 3 Entities
 
-  - User
-    - For separating authentication and user creation logic from vendor
-  - Vendor
-    - A user can have create multiple vendor accounts for better branching
-  - Purchase Order
-    - A vendor can have multiple purchase order
+What is provided in the project
+
+- User
+  - Create a new user
+  - Get all user
+  - Delete a user
+  - Get user by id
+
+- Vendor
+  - Create a new vendor
+  - Get all vendor
+  - Get vendor by id
+  
+- Purchase Order
+  - Create a new purchase order
+  - Get all purchase order
+  - Get purchase order by vendor
+  - Get purchase order by purchase order id
+  - Acknowledge purchase order
+
+- Performance matrices
+  > Automatic calculation of these metrics and update in the database upon creation and update of purchase order
+  - On-Time Delivery Rate
+  - Fulfillment Rate
+  - Quality Rating Average
+  - Average Response Time
+
+- Authentication
+  - Obtain new access token
+  - Obtain new refresh token
+  - Verify token
 
 
 
@@ -131,3 +155,18 @@ GET -> /api/purchase_order/user/<int:po_id>/
 ```
 GET -> /api/purchase_order/<int:po_id>/acknowledge
 ```
+
+- Django concepts in the project
+  - The project is designed to be scalable and fast
+  - The project uses Django ORM for database operations
+  - The project uses Django Rest Framework for API creation
+  - The project uses Django Rest Framework Simple JWT for token authentication
+  - The project uses Django Rest Framework Pagination for pagination
+  - The project uses Django Rest Framework Filtering for filtering
+  - The project uses Django Rest Framework Serializers for serialization
+  - The project uses Django Rest Framework Response for response
+  - The project uses Django Rest Framework Status for status
+  - The project uses Django Rest Framework APIView for APIView
+  - The project uses Django Rest Framework mixins for mixins
+  - The project uses Django Rest Framework decorators for decorators
+  - The project uses Django Rest Framework exceptions for exceptions
