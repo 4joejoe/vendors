@@ -2,11 +2,10 @@
 
 # Vendor System
 
-## Project is live on [render](https://vendors-backend.onrender.com)
+## Project is live on [render](https://vendors-l4a5.onrender.com)
 (First request might take 40+ sec to respond as server goes to idle)
 
 **Setup Instruction**
-
 
 ```bash
 # install packages
